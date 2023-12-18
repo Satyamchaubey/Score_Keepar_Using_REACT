@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JSX</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root">
+    </div>
+</body>
+<script type="text/babel">
+  
+    const App= ()=>{
+        var name = "SATYAM KUMAR CHAUBEY"
+        let age = 89;
+        let demo = 3+4;
+        const F = 12;
+        const C = (F - 32) * 5/9;
+        
+        return(
+            <>
+            <h1>Lets Learn Jsk In My Way!! {name} &  Your Age is {age} {demo} </h1>
+            </>
+
+        )
+     }
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+</script>
+</html>

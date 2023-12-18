@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Creating Typing Preview -->
+    <script type="text/babel">
+      const { useState } = React;
+
+      const InputPreview = () => {
+        const [inputText, setInputText] = useState("");
+        const [inputText1, setInputText1] = useState("");
+        const [inputText2, setInputText2] = useState("");
+
+        const handleInputChange = (e) => {
+          const { name, value } = e.target;
+          if (name === "inputText") {
+            setInputText(value);
+          } else if (name === "inputText1") {
+            setInputText1(value);
+          } else if (name === "inputText2") {
+            setInputText2(value);
+          }
+        };
+
+        return (
+          <div className="App">
+            <div className="inputs">
+              <input
+                type="text"
+                name="inputText"
+                value={inputText}
+                onChange={handleInputChange}
+                placeholder="Name"
+              />
+              <br />
+              <input
+                type="text"
+                name="inputText1"
+                value={inputText1}
+                onChange={handleInputChange}
+                placeholder="Email"
+              />
+              <br />
+
+              <textarea
+                type="text"
+                name="inputText2"
+                value={inputText2}
+                onChange={handleInputChange}
+                placeholder="About"
+              ></textarea>
+            </div>
+
+            <Card
+              inputText={inputText}
+              inputText1={inputText1}
+              inputText2={inputText2}
+            />
+          </div>
+        );
+      };
+
+      const Card = ({ inputText, inputText1, inputText2 }) => (
+        <div className="card">
+          <p>Name: {inputText}</p>
+          <p>Email: {inputText1}</p>
+          <p>About: {inputText2}</p>
+        </div>
+      );
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<InputPreview />);
+    </script>
+  </body>
+</html>

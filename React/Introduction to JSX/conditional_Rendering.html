@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root">
+    </div>
+</body>
+<script type="text/babel">
+    function App(){
+        let loggedIn  = true;
+        const obj = {
+            name:"rohit",
+            lastName:"Keshari"
+        }
+        return(
+            <>
+            <h1>Hii Dear {loggedIn?obj.lastName || obj.name:"Users"}!</h1>
+            {loggedIn && <h4>Welcome to the portal {obj.name}</h4>}
+            {!loggedIn && <h4>Please sign in first then you are abel to see your dashboard {obj.name}</h4>}
+            
+            </>
+        )
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />)
+
+</script>
+</html>

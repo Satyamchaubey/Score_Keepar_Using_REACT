@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    #img{
+        width: 50px;
+        height: 50px;
+    }
+    #tb{
+        margin: auto;
+        text-align: center;
+       
+    }
+    h1{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+</style>
+<body>
+    <div id="root">
+    </div>
+</body>
+<script type="text/babel">
+
+   function Carss(){
+    const car = [
+    {
+        name:'BMW',
+        model:"325",
+        year: 2019,
+        fuel:"petrol",
+        color:"red",
+        price:2345000000,
+        img: "file:///Users/john/Downloads/12-removebg-preview.png"
+    },
+    {
+        name:'BMW',
+        model:"325",
+        year: 2019,
+        fuel:"petrol",
+        color:"red",
+        price:2345000000,
+        img: "file:///Users/john/Downloads/12-removebg-preview.png"
+    },
+    {
+        name:'BMW',
+        model:"325",
+        year: 2019,
+        fuel:"petrol",
+        color:"red",
+        price:2345000000,
+        img: "file:///Users/john/Downloads/12-removebg-preview.png"
+    },
+    {
+        name:'BMW',
+        model:"325",
+        year: 2019,
+        fuel:"petrol",
+        color:"red",
+        price:2345000000,
+        img: "file:///Users/john/Downloads/12-removebg-preview.png"
+    },
+    
+    
+    
+    
+    
+    ]
+
+    return(
+        <>
+        <h1>Cars Detailes </h1>
+
+        <table border = "1" id="tb">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                   <th>Fuel Type</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>image</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                {car.map((cars,index)=>
+                    <tr key={index}>
+                    <td>{cars.name}</td>
+                    <td>{cars.model}</td>
+                    <td>{cars.year}</td>
+                    <td>{cars.fuel}</td>
+                    <td>{cars.color}</td>
+                    <td>{cars.price}</td>
+                    <td><td><img id="img" src={cars.img} alt={`${cars.name} ${cars.model}`} /></td></td>
+                </tr>
+                    
+                    
+                    )}
+            </tbody>
+            
+        </table>
+        
+        </>
+    )
+   }
+  
+function Bike(){
+    return(
+        <>
+     <h1> This is Bike Section right now it now Available! </h1>
+     </>
+    )
+}
+
+function App(){
+   
+    return(  <>
+    <Carss />
+    <Bike />
+    </> )
+    
+   
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />)
+
+
+</script>
+</html>
